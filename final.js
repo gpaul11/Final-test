@@ -1,4 +1,13 @@
-
+var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
+var UserSchema = new Schema({
+    "email":{
+      "type": String,
+      "unique": true
+    },
+    "password": String,
+  });
+var finalUsers = mongoose.model("finalUsers", UserSchema);
 module.exports.startDB=function(){
     return new Promise((resolve, reject) => {
         resolve();
